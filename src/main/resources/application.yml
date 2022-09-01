@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ki_kojas_db
+    username: postgres
+    password: momen
+
+  jpa:
+    database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+---
+minio:
+  bucket:
+    name: kikojas
+  default:
+    folder: "/"
+  access:
+    name: admin
+    secret: password
+
+  url: http://127.0.0.1:9000
