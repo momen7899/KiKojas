@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @AllArgsConstructor
@@ -19,6 +20,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<Void> save(@RequestBody UserDTO userDTO) {
+        System.out.println(userDTO.toString());
         User user = mapper.toUser(userDTO);
         service.save(user);
         return ResponseEntity.status(HttpStatus.CREATED).build();

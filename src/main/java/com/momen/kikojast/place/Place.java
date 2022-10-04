@@ -1,5 +1,6 @@
 package com.momen.kikojast.place;
 
+import com.momen.kikojast.comment.Comment;
 import com.momen.kikojast.common.BaseEntity;
 import com.momen.kikojast.image.Image;
 import com.momen.kikojast.like.Like;
@@ -53,6 +54,11 @@ public class Place extends BaseEntity {
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "place", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Image> images;
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "place", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Comment> comments;
 
 
 }
